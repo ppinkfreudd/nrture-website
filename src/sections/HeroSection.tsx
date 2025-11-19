@@ -144,7 +144,7 @@ export function HeroSection() {
   }, []);
 
   const heroHeightStyle =
-    viewportSize !== null && viewportSize.width >= 1280
+    viewportSize !== null && (viewportSize.width < 640 || viewportSize.width >= 1280)
       ? {
           minHeight: `${viewportSize.height}px`,
           height: `${viewportSize.height}px`,
@@ -168,22 +168,22 @@ export function HeroSection() {
   return (
     <>
       <section
-        className="relative -mt-24 box-border flex h-full flex-col justify-center overflow-hidden pb-12 pt-18 text-ink min-h-[100vh] sm:-mt-28 sm:pb-4 sm:pt-20 md:-mt-12 md:pb-6 md:pt-32 md:justify-between md:overflow-visible xl:-mt-10 xl:pb-16 xl:pt-40"
+        className="relative mt-0 box-border flex h-full flex-col justify-center overflow-hidden pb-10 pt-20 text-ink min-h-[100vh] sm:pb-4 sm:pt-20 md:pb-6 md:pt-32 md:justify-between md:overflow-visible xl:pb-16 xl:pt-40"
         id="solution"
         style={heroHeightStyle}
       >
-        <div className="mx-auto flex w-full max-w-[min(1440px,100%)] flex-col gap-8 px-4 pt-6 pb-4 sm:px-6 sm:gap-10 sm:pt-12 sm:pb-6 lg:h-full lg:flex-row lg:items-center lg:gap-12 lg:pb-0 lg:pt-12">
-          <div className="mt-0 flex flex-1 flex-col items-center justify-center gap-10 pb-10 sm:gap-8 md:gap-8 md:pb-0 md:w-full md:max-w-[1100px] md:pr-12 lg:max-w-[1300px] xl:max-w-[1400px] xl:pr-16 h-full">
-            <div className="space-y-8 text-center sm:space-y-6 md:space-y-5 md:translate-y-0 w-full max-w-[min(640px,100%)] mx-auto lg:max-w-none lg:w-auto lg:mx-0">
-              <h1 className="text-[clamp(0.98rem,5.3vw,4.1rem)] font-display font-semibold leading-[1.1] text-center whitespace-nowrap overflow-visible bg-gradient-to-r from-[#D46BFF] via-[#F9B4F1] to-[#4B8BFF] bg-clip-text text-transparent px-2 sm:text-[clamp(1.1rem,6vw,4.6rem)] sm:whitespace-normal">
+        <div className="mx-auto flex w-full max-w-[min(1440px,100%)] flex-col gap-8 px-4 pt-4 pb-4 sm:px-6 sm:gap-10 sm:pt-12 sm:pb-6 lg:h-full lg:flex-row lg:items-center lg:gap-12 lg:pb-0 lg:pt-12">
+          <div className="mt-0 flex flex-1 flex-col items-center justify-between gap-10 pb-6 sm:gap-8 sm:justify-center md:gap-8 md:justify-center md:pb-0 md:w-full md:max-w-[1100px] md:pr-12 lg:max-w-[1300px] xl:max-w-[1400px] xl:pr-16 h-full">
+            <div className="space-y-10 text-center sm:space-y-6 md:space-y-5 md:translate-y-0 w-full max-w-[min(640px,100%)] mx-auto lg:max-w-none lg:w-auto lg:mx-0">
+              <h1 className="text-[clamp(1.4rem,6.5vw,2.6rem)] font-display font-semibold leading-[1.1] text-center whitespace-normal overflow-visible bg-gradient-to-r from-[#D46BFF] via-[#F9B4F1] to-[#4B8BFF] bg-clip-text text-transparent px-2 sm:text-[clamp(1.1rem,6vw,4.6rem)]">
                 Your social reputation matters
               </h1>
-              <p className="text-center text-[clamp(1.05rem,4.2vw,2.205rem)] font-semibold leading-snug text-ink sm:text-[clamp(1.2rem,3.4vw,2.3rem)]">
+              <p className="text-center text-[clamp(1.2rem,4.8vw,1.7rem)] font-semibold leading-snug text-ink sm:text-[clamp(1.2rem,3.4vw,2.3rem)]">
                 Stop losing customers to unanswered reviews.
                 <span className="block">Turn every review into revenue.</span>
               </p>
               <div className="mt-12 sm:mt-8 md:mt-6 w-full lg:mt-10 md:max-w-[65%] lg:max-w-[55%] md:mx-auto lg:mx-auto">
-                <div className="space-y-6 text-center text-[clamp(0.89rem,2.63vw,1.21rem)] leading-relaxed text-ink sm:space-y-3 md:space-y-4 sm:text-[clamp(0.95rem,2.1vw,1.3rem)]">
+                <div className="space-y-8 text-center text-[clamp(1rem,3.8vw,1.25rem)] leading-relaxed text-ink sm:space-y-3 md:space-y-4 sm:text-[clamp(0.95rem,2.1vw,1.3rem)]">
                   <p className="m-0">
                   nrtureAI turns every review into actionable intelligence by automating replies, decoding emotions, benchmarking peers, and revealing the drivers of spend and satisfaction
                   </p>
@@ -223,25 +223,25 @@ export function HeroSection() {
         </div>
       </section>
       <section
-        className="bg-white mt-12 pt-12 pb-12 text-ink sm:mt-10 sm:pt-6 md:translate-y-0 md:mt-8 md:pt-8 md:pb-16 lg:mt-0 lg:pt-8 lg:pb-16 xl:pt-10 xl:pb-16"
+        className="bg-white mt-4 pt-12 pb-12 text-ink sm:mt-10 sm:pt-6 md:translate-y-0 md:mt-8 md:pt-8 md:pb-16 lg:mt-0 lg:pt-8 lg:pb-16 xl:pt-10 xl:pb-16"
         id="elara"
       >
         <div className="mx-auto max-w-5xl px-6">
-          <div className="space-y-4 text-center transform -translate-y-[15vh] sm:transform-none">
-            <div className="inline-flex flex-wrap items-baseline justify-center gap-2">
-              <span className="text-[clamp(1.4rem,5.2vw,2.3rem)] font-display font-semibold leading-tight tracking-tight text-ink sm:text-[clamp(1.6rem,4.4vw,2.6rem)] lg:text-[3.2rem]">
+          <div className="space-y-4 text-center">
+            <div className="inline-flex w-full flex-wrap items-baseline justify-center gap-2 -mx-4 sm:mx-0">
+              <span className="text-[clamp(1.55rem,5.7vw,2.5rem)] font-display font-semibold leading-tight tracking-tight text-ink sm:text-[clamp(1.6rem,4.4vw,2.6rem)] lg:text-[3.2rem]">
                 Introducing <span className="text-sky-600">Elara,</span>
               </span>
               <TextGenerateEffect
                 words="your AI social reputation manager"
                 className="font-display font-semibold text-ink"
-                textClassName="text-[clamp(1.4rem,5.2vw,2.3rem)] sm:text-[clamp(1.6rem,4.4vw,2.6rem)] lg:text-[3.2rem] leading-tight tracking-tight"
+                textClassName="text-[clamp(1.55rem,5.7vw,2.5rem)] sm:text-[clamp(1.6rem,4.4vw,2.6rem)] lg:text-[3.2rem] leading-tight tracking-tight"
                 wrapperClassName="mt-0"
                 duration={0.4}
               />
             </div>
           </div>
-          <div className="mt-3 sm:mt-8 transform -translate-y-[20%] sm:transform-none">
+          <div className="mt-6 md:mt-8">
             <StickyScroll
               content={stickyFeatureContent}
               contentClassName="mx-auto flex w-full min-h-[420px] items-center justify-center overflow-visible bg-transparent p-0 shadow-none sm:min-h-[500px] md:max-w-[420px] md:min-h-[520px] lg:max-w-[540px] lg:min-h-[560px]"
