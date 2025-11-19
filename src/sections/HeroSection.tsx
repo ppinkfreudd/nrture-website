@@ -114,12 +114,18 @@ const FEATURE_SCROLL_STEPS: FeatureSlide[] = [
 
 export function HeroSection() {
   const [gifCycle, setGifCycle] = useState(0);
-  const [viewportHeight, setViewportHeight] = useState<number | null>(null);
+  const [viewportSize, setViewportSize] = useState<{
+    height: number;
+    width: number;
+  } | null>(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
     const updateViewportSize = () => {
-      setViewportHeight(window.innerHeight);
+      setViewportSize({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      });
     };
 
     updateViewportSize();
@@ -138,10 +144,10 @@ export function HeroSection() {
   }, []);
 
   const heroHeightStyle =
-    viewportHeight !== null
+    viewportSize !== null && viewportSize.width >= 1280
       ? {
-          minHeight: `${viewportHeight}px`,
-          height: `${viewportHeight}px`,
+          minHeight: `${viewportSize.height}px`,
+          height: `${viewportSize.height}px`,
         }
       : undefined;
 

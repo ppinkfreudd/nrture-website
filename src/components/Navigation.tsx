@@ -323,7 +323,7 @@ export function Navigation() {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 bg-transparent px-3 py-3 sm:px-4">
+    <header className="fixed inset-x-0 top-3 z-50 bg-transparent px-3 py-3 sm:top-4 sm:px-4">
       <div className="mx-auto w-full max-w-7xl">
         <div className="rounded-[999px] bg-gradient-to-r from-[#D46BFF] via-[#F9B4F1] to-[#4B8BFF] p-[1px] shadow-[0_18px_55px_rgba(15,23,42,0.22)]">
           <div className="flex w-full items-center justify-between gap-2 rounded-[999px] border border-white/40 bg-white/70 px-3 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-2xl sm:gap-5 sm:px-6 sm:py-3 md:gap-6 md:px-7">
