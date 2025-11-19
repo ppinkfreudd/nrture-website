@@ -127,7 +127,7 @@ export function TorontoTeaserSection() {
 
   return (
     <section className="bg-white pt-6 pb-20 mt-3 scroll-mt-24 sm:mt-2 sm:scroll-mt-28 md:mt-0 md:pt-12 md:pb-24 md:scroll-mt-32 lg:-mt-16 xl:-mt-24" id="toronto">
-      <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:flex-row lg:items-start lg:gap-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:flex-row lg:items-start lg:gap-4">
         <div className="flex-1 space-y-4 text-sm sm:space-y-5 sm:px-2 lg:pr-8">
           <span className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-neutral-600 sm:text-xs">
             {currentSlide.badge}
@@ -148,7 +148,7 @@ export function TorontoTeaserSection() {
         </div>
         <div className="flex-1 lg:-mr-4">
           <div className="relative w-full overflow-visible">
-            <div className="mx-auto w-full overflow-hidden rounded-[3rem] border border-neutral-200 bg-gradient-to-br from-brand-200 via-white to-brand-50 shadow-[0_35px_90px_rgba(15,23,42,0.25)] sm:w-[105%] sm:translate-x-[-2.5%] lg:w-[110%] lg:translate-x-[-5%]">
+            <div className="mx-auto w-full overflow-hidden rounded-[3rem] border border-neutral-200 bg-gradient-to-br from-brand-200 via-white to-brand-50 shadow-[0_35px_90px_rgba(15,23,42,0.25)] sm:w-[105%] sm:translate-x-[-2.5%] lg:w-[120%] lg:translate-x-[-12%]">
               <div className="relative w-full overflow-hidden rounded-[3rem]">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(13,110,253,0.16),transparent),radial-gradient(circle_at_80%_80%,rgba(255,143,143,0.18),transparent)]" />
                 <div className="relative flex aspect-[16/9] w-full items-center justify-center p-0 sm:p-1 lg:p-2">
