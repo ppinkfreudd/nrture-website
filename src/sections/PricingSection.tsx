@@ -10,7 +10,7 @@ type PricingPlan = {
   benefits: string[];
   ctaLabel: string;
   ctaHref: string;
-  variant: "lite" | "litePlus" | "pro" | "advanced" | "enterprise" | "destination";
+  variant: "lite" | "litePlus" | "pro" | "enterprise";
 };
 
 const plans: PricingPlan[] = [
@@ -57,20 +57,6 @@ const plans: PricingPlan[] = [
     variant: "pro",
   },
   {
-    key: "advanced",
-    name: "Advanced",
-    description: "For brands wanting monthly strategic guidance and service‑recovery programs.",
-    price: "$499",
-    secondaryPrice: "/ month",
-    benefits: [
-      "Everything in Pro",
-      "Monthly 45‑minute Strategic Debrief",
-    ],
-    ctaLabel: "Talk Advanced",
-    ctaHref: "https://nrture.ai/choose-plan/",
-    variant: "advanced",
-  },
-  {
     key: "enterprise",
     name: "Enterprise",
     description: "For airports, groups, and large portfolios needing command‑level intelligence.",
@@ -83,20 +69,6 @@ const plans: PricingPlan[] = [
     ctaLabel: "Request Enterprise",
     ctaHref: "https://nrture.ai/choose-plan/",
     variant: "enterprise",
-  },
-  {
-    key: "destination",
-    name: "Destination",
-    description: "For cities, councils, and tourism boards managing region‑wide reputation and insights.",
-    price: "Curated",
-    secondaryPrice: "",
-    benefits: [
-      "Everything in Enterprise",
-      "Destination & Region‑wide Intelligence",
-    ],
-    ctaLabel: "Book Destination Demo",
-    ctaHref: "https://nrture.ai/choose-plan/",
-    variant: "destination",
   },
 ];
 
@@ -143,16 +115,6 @@ const variantStyles: Record<
     ctaBgClass: "bg-[#f2d4ff]",
     ctaTextClass: "text-[#4a148c]",
   },
-  advanced: {
-    accent: "from-[#e0e7ff] to-white",
-    badgeBg: "bg-[#e0e7ff]",
-    badgeText: "text-[#1e3a8a]",
-    titleBg: "bg-[#e0e7ff]",
-    titleText: "text-[#1e3a8a]",
-    titleHex: { background: "#e0e7ff", color: "#1e3a8a" },
-    ctaBgClass: "bg-[#e0e7ff]",
-    ctaTextClass: "text-[#1e3a8a]",
-  },
   enterprise: {
     accent: "from-[#daeafe] to-white",
     badgeBg: "bg-[#daeafe]",
@@ -162,16 +124,6 @@ const variantStyles: Record<
     titleHex: { background: "#daeafe", color: "#0c4a6e" },
     ctaBgClass: "bg-[#daeafe]",
     ctaTextClass: "text-[#0c4a6e]",
-  },
-  destination: {
-    accent: "from-[#d8f2ff] to-white",
-    badgeBg: "bg-[#d8f2ff]",
-    badgeText: "text-[#0f4c5c]",
-    titleBg: "bg-[#d8f2ff]",
-    titleText: "text-[#0f4c5c]",
-    titleHex: { background: "#d8f2ff", color: "#0f4c5c" },
-    ctaBgClass: "bg-[#d8f2ff]",
-    ctaTextClass: "text-[#0f4c5c]",
   },
 };
 export function PricingSection() {
@@ -193,7 +145,7 @@ export function PricingSection() {
               key={plan.key}
               className="rounded-3xl border border-black/10 bg-white p-6 shadow-[0_14px_38px_rgba(15,23,42,0.09)]"
             >
-              <div className="flex items-start justify-between gap-3">
+              <div className="flex flex-col items-center gap-3 text-center">
                 <div>
                   <p className="text-2xl font-display font-semibold text-ink">{plan.name}</p>
                   <p className="mt-2 text-sm text-neutral-600">{plan.description}</p>
@@ -269,7 +221,7 @@ export function PricingSection() {
                               borderTopRightRadius: isLast ? "4.5rem" : undefined,
                             }}
                           >
-                            <div className="flex items-center justify-between gap-3">
+                            <div className="flex flex-col items-center gap-2 text-center">
                               <p className="text-xl font-display font-semibold sm:text-2xl">{plan.name}</p>
                               {plan.highlight && (
                                 <span
@@ -279,7 +231,7 @@ export function PricingSection() {
                                 </span>
                               )}
                             </div>
-                            <p className="flex-1 text-[0.6rem] leading-relaxed opacity-80 sm:text-[0.67rem]">
+                            <p className="flex-1 text-center text-[0.6rem] leading-relaxed opacity-80 sm:text-[0.67rem]">
                               {plan.description}
                             </p>
                           </div>

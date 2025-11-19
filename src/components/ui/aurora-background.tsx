@@ -2,12 +2,15 @@
 import { cn } from "@/lib/utils";
 import type { CSSProperties, HTMLProps, ReactNode } from "react";
 
+type CSSPropertiesWithVars = CSSProperties & Record<string, string | number>;
+
 interface AuroraBackgroundProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
   showRadialGradient?: boolean;
   fitContent?: boolean;
   fullBleed?: boolean;
   auroraOffset?: string | number;
+  auroraBottomTrim?: string | number;
 }
 
 export const AuroraBackground = ({
@@ -17,6 +20,7 @@ export const AuroraBackground = ({
   fitContent = false,
   fullBleed = false,
   auroraOffset = "var(--aurora-offset, 0px)",
+  auroraBottomTrim = "var(--aurora-bottom-trim, 0px)",
   ...props
 }: AuroraBackgroundProps) => {
   const minHeightClasses = fitContent
@@ -28,7 +32,7 @@ export const AuroraBackground = ({
   const maskClasses = showRadialGradient
     ? "[mask-image:none] 2xl:[mask-image:radial-gradient(ellipse_at_100%_0%,black_12%,var(--transparent)_70%)]"
     : "[mask-image:none]";
-  const auroraBackgroundStyle: CSSProperties = {
+  const auroraBackgroundStyle: CSSPropertiesWithVars = {
     "--aurora":
       "repeating-linear-gradient(100deg,#3b82f6_10%,#a5b4fc_15%,#93c5fd_20%,#ddd6fe_25%,#60a5fa_30%)",
     "--dark-gradient":
@@ -44,13 +48,18 @@ export const AuroraBackground = ({
     "--white": "#fff",
     "--transparent": "transparent",
     top: auroraOffset,
-    bottom: 0,
   };
+
+  const normalizedBottomTrim =
+    typeof auroraBottomTrim === "number" ? `${auroraBottomTrim}px` : auroraBottomTrim;
+  const baseTopOffset = fullBleed ? `calc(${auroraOffset} - 2rem)` : auroraOffset;
+  const baseBottomOffset = fullBleed ? "-2rem" : "0px";
+
+  auroraBackgroundStyle.top = baseTopOffset;
+  auroraBackgroundStyle.bottom = `calc(${baseBottomOffset} + ${normalizedBottomTrim})`;
 
   if (fullBleed) {
     auroraBackgroundStyle.width = "min(1400px, calc(100vw + 12rem))";
-    auroraBackgroundStyle.top = `calc(${auroraOffset} - 2rem)`;
-    auroraBackgroundStyle.bottom = "-2rem";
   }
 
   return (

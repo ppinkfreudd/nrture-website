@@ -100,7 +100,7 @@ export function GoogleReviewPile({ className }: GoogleReviewPileProps) {
   return (
     <div
       className={clsx(
-        "pointer-events-none relative h-[320px] w-full max-w-[260px] sm:h-[420px] sm:max-w-[340px] md:h-[460px] md:max-w-[380px]",
+        "pointer-events-none relative min-h-[300px] w-full max-w-[360px] sm:min-h-[360px] sm:max-w-[420px] md:min-h-[400px] md:max-w-[460px]",
         className,
       )}
     >
@@ -136,7 +136,7 @@ export function GoogleReviewPile({ className }: GoogleReviewPileProps) {
           <div
             key={`${review.author}-${index}`}
             style={style}
-            className="absolute h-[170px] w-full max-w-[220px] rounded-xl border border-neutral-200 bg-white p-3 shadow-[0_18px_35px_rgba(15,23,42,0.15)] sm:h-[220px] sm:max-w-[300px] sm:p-4 md:h-[240px] md:max-w-[340px] md:p-5"
+            className="absolute w-full max-w-[320px] rounded-2xl border border-neutral-200 bg-white p-3 shadow-[0_18px_35px_rgba(15,23,42,0.15)] min-h-[160px] sm:max-w-[380px] sm:p-4 sm:min-h-[200px] md:max-w-[420px] md:p-5 md:min-h-[220px]"
           >
             <div className="flex h-full flex-col">
               <div className="space-y-3">

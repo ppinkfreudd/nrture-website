@@ -55,10 +55,10 @@ export const StickyScroll = ({
       </div>
       <div className="relative w-full text-slate-900 lg:ml-8 xl:ml-12 lg:w-[56%] lg:max-w-4xl xl:w-[60%] 2xl:w-[62%]">
         <div
-          className={cn(
-            "relative mx-auto flex w-[calc(100%+24px)] max-w-[480px] flex-col rounded-[28px] px-4 py-5 shadow-[0_25px_65px_rgba(15,23,42,0.12)] backdrop-blur sm:w-full sm:max-w-full sm:px-6 sm:py-6 lg:translate-x-4 lg:translate-y-10 lg:px-8 lg:py-8 xl:translate-x-8 xl:translate-y-12 xl:px-10 xl:py-9",
-            [
-              "bg-gradient-to-br from-emerald-100/90 via-white to-white shadow-[0_25px_80px_rgba(16,185,129,0.25)]",
+        className={cn(
+          "relative mx-auto flex w-full max-w-[min(480px,100%)] flex-col rounded-[28px] px-4 py-5 shadow-[0_25px_65px_rgba(15,23,42,0.12)] backdrop-blur sm:max-w-full sm:px-6 sm:py-6 lg:translate-x-4 lg:translate-y-10 lg:px-8 lg:py-8 xl:translate-x-8 xl:translate-y-12 xl:px-10 xl:py-9",
+          [
+            "bg-gradient-to-br from-emerald-100/90 via-white to-white shadow-[0_25px_80px_rgba(16,185,129,0.25)]",
               "bg-gradient-to-br from-rose-100/90 via-white to-white shadow-[0_25px_80px_rgba(244,114,182,0.25)]",
               "bg-gradient-to-br from-sky-100/90 via-white to-white shadow-[0_25px_80px_rgba(14,165,233,0.25)]",
               "bg-gradient-to-br from-pink-100/90 via-white to-white shadow-[0_25px_80px_rgba(236,72,153,0.25)]",

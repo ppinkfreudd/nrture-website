@@ -23,10 +23,10 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="relative z-10">
+    <div className="min-h-screen w-screen bg-white">
+      <div className="relative z-10 w-full overflow-x-hidden">
         <Navigation />
-        <main>
+        <main className="w-full overflow-x-hidden">
           <HeroSection />
           <TorontoTeaserSection />
           <PricingSection />

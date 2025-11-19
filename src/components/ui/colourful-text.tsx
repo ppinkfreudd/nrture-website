@@ -19,7 +19,7 @@ export function ColourfulText({
   variant = "gradient",
 }: ColourfulTextProps) {
   if (variant === "solid") {
-    return <span className={cn("inline-flex text-white", className)}>{text}</span>;
+    return <span className={cn("inline-flex text-current", className)}>{text}</span>;
   }
 
   const animationConfig = animated
