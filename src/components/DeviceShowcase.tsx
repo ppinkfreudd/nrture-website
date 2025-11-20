@@ -18,7 +18,7 @@ export function DeviceShowcase({ phoneSrc, tabletSrc, phase, className }: Device
       )}
     >
       <div className="relative flex w-full max-w-[2200px] items-center justify-center overflow-visible">
-        <div className="relative mx-auto w-full max-w-[360px] translate-x-[var(--device-shift)] [--device-shift:25%] sm:max-w-[480px] sm:translate-y-[30%] sm:[--device-shift:32%] md:max-w-[560px] md:translate-y-[32%] md:[--device-shift:24%] md:ml-auto md:mr-0 lg:max-w-[820px] lg:translate-y-[38%] lg:[--device-shift:60%] xl:max-w-[960px] xl:translate-y-[42%] xl:[--device-shift:80%] 2xl:max-w-[1080px] 2xl:translate-y-[45%] 2xl:[--device-shift:105%]">
+        <div className="relative mx-auto w-full max-w-[360px] translate-x-[var(--device-shift)] [--device-shift:25%] sm:max-w-[480px] sm:translate-y-[30%] sm:[--device-shift:32%] md:max-w-[560px] md:translate-y-[32%] md:[--device-shift:24%] md:ml-auto md:mr-0 lg:max-w-[820px] lg:translate-y-[38%] lg:[--device-shift:60%] xl:max-w-[960px] xl:translate-y-[42%] xl:[--device-shift:80%] 2xl:max-w-[1080px] 2xl:translate-y-[45%]">
           <div className="relative aspect-[4/3] w-full overflow-visible">
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-full origin-center scale-[1.45] sm:scale-[1.6] md:scale-[1.8] lg:scale-[2.7] xl:scale-[3.05] 2xl:scale-[3.3]">
