@@ -8,9 +8,59 @@ type SignupFormDemoProps = {
 };
 
 export default function SignupFormDemo({ className }: SignupFormDemoProps) {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [submitting, setSubmitting] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
+  const [success, setSuccess] = React.useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Talk to us form submitted");
+    setSubmitting(true);
+    setError(null);
+    setSuccess(false);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const body = new URLSearchParams();
+
+    formData.forEach((value, key) => {
+      if (typeof value === "string") {
+        body.append(key, value);
+      }
+    });
+
+    try {
+      const res = await fetch("/api/contact-us", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: body.toString(),
+      });
+
+      let data: { success?: boolean; message?: string } | null = null;
+      try {
+        data = await res.json();
+      } catch {
+        data = null;
+      }
+
+      if (data && data.success) {
+        setSuccess(true);
+        form.reset();
+        return;
+      }
+
+      if (!res.ok) {
+        setError(data?.message || "Something went wrong. Please try again.");
+        return;
+      }
+
+      setError("Something went wrong. Please try again.");
+    } catch (err) {
+      setError("Unable to submit right now. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
   return (
     <div className={cn("shadow-input mx-auto w-full rounded-3xl border border-neutral-200 bg-white/95 p-4 sm:p-6 lg:p-7", className)}>
@@ -25,36 +75,37 @@ export default function SignupFormDemo({ className }: SignupFormDemoProps) {
         <div className="flex flex-col gap-2 sm:flex-row">
           <LabelInputContainer className="flex-1">
             <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" placeholder="Jordan" type="text" required />
+            <Input id="firstname" name="first_name" placeholder="Jordan" type="text" required />
           </LabelInputContainer>
           <LabelInputContainer className="flex-1">
             <Label htmlFor="lastname">Last name</Label>
-            <Input id="lastname" placeholder="Lee" type="text" required />
+            <Input id="lastname" name="last_name" placeholder="Lee" type="text" required />
           </LabelInputContainer>
         </div>
         <LabelInputContainer>
           <Label htmlFor="email">Work email</Label>
-          <Input id="email" placeholder="you@company.com" type="email" required />
+          <Input id="email" name="work_email" placeholder="you@company.com" type="email" required />
         </LabelInputContainer>
         <LabelInputContainer>
           <Label htmlFor="company">Company / Venue</Label>
-          <Input id="company" placeholder="Harbour Lounge" type="text" required />
+          <Input id="company" name="company_name" placeholder="Harbour Lounge" type="text" required />
         </LabelInputContainer>
         <div className="flex flex-col gap-2 sm:flex-row">
           <LabelInputContainer className="flex-1">
             <Label htmlFor="phone">Phone number (optional)</Label>
-            <Input id="phone" placeholder="+1 415 555 0102" type="tel" />
+            <Input id="phone" name="phone_number" placeholder="+1 415 555 0102" type="tel" />
           </LabelInputContainer>
           <LabelInputContainer className="flex-1">
             <Label htmlFor="timeline">Timeline</Label>
             <select
               id="timeline"
+              name="timeline"
               className="h-10 w-full rounded-lg border border-neutral-200 bg-white px-3 text-sm text-neutral-800 outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100"
             >
-              <option value="immediately">Immediately</option>
-              <option value="30days">Within 30 days</option>
-              <option value="quarter">This quarter</option>
-              <option value="exploring">Just exploring</option>
+              <option value="Immediately">Immediately</option>
+              <option value="Within 30 days">Within 30 days</option>
+              <option value="This quarter">This quarter</option>
+              <option value="Just exploring">Just exploring</option>
             </select>
           </LabelInputContainer>
         </div>
@@ -63,6 +114,7 @@ export default function SignupFormDemo({ className }: SignupFormDemoProps) {
           <textarea
             id="message"
             rows={3}
+            name="message"
             className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-800 outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100"
             placeholder="Give us a quick brief so we can tailor the walkthrough."
             required
@@ -71,10 +123,21 @@ export default function SignupFormDemo({ className }: SignupFormDemoProps) {
         <button
           className="group/btn relative block h-11 w-full rounded-xl bg-gradient-to-br from-sky-500 to-blue-700 text-sm font-semibold uppercase tracking-wider text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset]"
           type="submit"
+          disabled={submitting}
         >
-          Send request &rarr;
+          {submitting ? "Sending..." : "Send request →"}
           <BottomGradient />
         </button>
+        {success && (
+          <p className="text-sm text-green-600">
+            Thank you — your request has been sent.
+          </p>
+        )}
+        {error && (
+          <p className="text-sm text-red-600">
+            {error}
+          </p>
+        )}
       </form>
       <p className="mt-4 text-center text-xs text-neutral-500">
         By submitting, you agree to hear from nrtureAI regarding product updates and research. You can opt out at any time.

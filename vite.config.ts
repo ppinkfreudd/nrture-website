@@ -11,5 +11,13 @@ export default defineConfig({
   },
   server: {
     port: 5173,
+    proxy: {
+      "/api/contact-us": {
+        target: "https://elara.nrture.ai",
+        changeOrigin: true,
+        secure: true,
+        rewrite: (pathStr) => pathStr.replace(/^\/api\/contact-us/, "/contact-us/"),
+      },
+    },
   },
 });

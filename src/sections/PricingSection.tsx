@@ -32,7 +32,7 @@ const plans: PricingPlan[] = [
     key: "litePlus",
     name: "Lite+",
     description: "For teams that need real-time peer benchmarking and cross‑brand insights.",
-    price: "$99",
+    price: "$149",
     secondaryPrice: "/ month",
     benefits: [
       "Everything in Lite",

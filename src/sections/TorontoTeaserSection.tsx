@@ -78,7 +78,7 @@ const researchSlides: ResearchSlide[] = [
 
 export function TorontoTeaserSection() {
   const currentSlide = researchSlides[0];
-  const researchVideo = new URL("../../video.mp4", import.meta.url).href;
+  const researchVideo = "https://storage.googleapis.com/elara-assets/video.mp4";
   const researchVideoPoster = new URL("../../screenshot-website.png", import.meta.url).href;
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [capturedPoster, setCapturedPoster] = useState<string | null>(null);
@@ -90,18 +90,22 @@ export function TorontoTeaserSection() {
 
     const captureFrame = () => {
       if (!videoEl || !videoEl.videoWidth || !videoEl.videoHeight) return;
-      const canvas = document.createElement("canvas");
-      canvas.width = videoEl.videoWidth;
-      canvas.height = videoEl.videoHeight;
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
-      ctx.drawImage(videoEl, 0, 0, canvas.width, canvas.height);
-      const dataUrl = canvas.toDataURL("image/png");
-      if (!isCancelled) {
-        setCapturedPoster(dataUrl);
+      try {
+        const canvas = document.createElement("canvas");
+        canvas.width = videoEl.videoWidth;
+        canvas.height = videoEl.videoHeight;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return;
+        ctx.drawImage(videoEl, 0, 0, canvas.width, canvas.height);
+        const dataUrl = canvas.toDataURL("image/png");
+        if (!isCancelled) {
+          setCapturedPoster(dataUrl);
+        }
+        videoEl.currentTime = 0;
+        videoEl.pause();
+      } catch {
+        // Cross-origin video without CORS will taint the canvas; skip capturing in that case.
       }
-      videoEl.currentTime = 0;
-      videoEl.pause();
     };
 
     const handleSeeked = () => {
