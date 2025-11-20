@@ -13,6 +13,10 @@ export default function SignupFormDemo({ className }: SignupFormDemoProps) {
   const [success, setSuccess] = React.useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const apiBase = import.meta.env.DEV
+      ? "/api"
+      : "https://elara.nrture.ai";
+
     e.preventDefault();
     setSubmitting(true);
     setError(null);
@@ -29,7 +33,7 @@ export default function SignupFormDemo({ className }: SignupFormDemoProps) {
     });
 
     try {
-      const res = await fetch("/api/contact-us", {
+      const res = await fetch(`${apiBase}/contact-us/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
