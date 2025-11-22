@@ -101,11 +101,12 @@ export function TorontoTeaserSection() {
         if (!isCancelled) {
           setCapturedPoster(dataUrl);
         }
-        videoEl.currentTime = 0;
-        videoEl.pause();
       } catch {
         // Cross-origin video without CORS will taint the canvas; skip capturing in that case.
       }
+      // Always reset video back to the start so playback begins at 0:00
+      videoEl.currentTime = 0;
+      videoEl.pause();
     };
 
     const handleSeeked = () => {
