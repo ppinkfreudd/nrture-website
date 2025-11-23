@@ -98,24 +98,6 @@ const FEATURE_SCROLL_STEPS: FeatureSlide[] = [
 
 export function HeroSection() {
   const [gifCycle, setGifCycle] = useState(0);
-  const [viewportSize, setViewportSize] = useState<{
-    height: number;
-    width: number;
-  } | null>(null);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return undefined;
-    const updateViewportSize = () => {
-      setViewportSize({
-        height: window.innerHeight,
-        width: window.innerWidth,
-      });
-    };
-
-    updateViewportSize();
-    window.addEventListener("resize", updateViewportSize);
-    return () => window.removeEventListener("resize", updateViewportSize);
-  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
@@ -127,15 +109,6 @@ export function HeroSection() {
     return () => window.clearInterval(interval);
   }, []);
 
-  const heroHeightStyle =
-    viewportSize !== null
-      ? viewportSize.width >= 1280
-        ? { minHeight: "auto" }
-        : viewportSize.width < 640
-          ? { minHeight: `${viewportSize.height}px` }
-          : undefined
-      : undefined;
-
   const loopingGifSrc = `${elaraGif}?cycle=${gifCycle}`;
   const stickyFeatureContent = FEATURE_SCROLL_STEPS.map((feature) => ({
     title: feature.title,
@@ -145,13 +118,12 @@ export function HeroSection() {
   return (
     <>
       <section
-        className="relative mt-0 box-border flex h-full flex-col justify-center overflow-visible pb-10 pt-24 text-ink min-h-[100vh] sm:pb-4 sm:pt-24 md:pb-6 md:pt-32 md:justify-between md:overflow-visible xl:pb-16 xl:pt-40"
+        className="hero-landscape relative mt-0 box-border flex h-full flex-col justify-center overflow-visible pb-10 pt-24 text-ink sm:pb-4 sm:pt-24 md:pb-6 md:pt-32 md:justify-between md:overflow-visible xl:pb-16 xl:pt-40"
         id="solution"
-        style={heroHeightStyle}
       >
         <div className="mx-auto flex w-full max-w-[min(1440px,100%)] flex-col gap-8 px-4 pt-4 pb-4 sm:px-6 sm:gap-10 sm:pt-12 sm:pb-6 lg:h-full lg:flex-row lg:items-center lg:gap-8 lg:pb-0 lg:pt-12">
           <div className="mt-0 flex flex-1 flex-col items-start justify-between gap-10 pb-6 sm:gap-8 sm:justify-center md:gap-8 md:justify-center md:pb-0 md:w-full md:max-w-[1100px] md:pr-12 lg:w-[80%] lg:max-w-none xl:pr-16 h-full">
-            <div className="space-y-10 text-center sm:text-left sm:space-y-6 md:space-y-5 translate-y-[15%] sm:translate-y-0 md:translate-y-0 lg:-translate-y-[10%] w-full max-w-[min(1100px,100%)] pl-2 lg:max-w-none lg:w-auto lg:pl-6 xl:pl-10">
+            <div className="space-y-10 text-center sm:text-left sm:space-y-6 md:space-y-5 w-full max-w-[min(1100px,100%)] pl-2 lg:max-w-none lg:w-auto lg:pl-6 xl:pl-10">
               <h1 className="text-[clamp(1.52rem,5.8vw,2.6rem)] font-display font-semibold leading-[1.1] whitespace-nowrap overflow-visible bg-gradient-to-r from-[#D46BFF] via-[#F9B4F1] to-[#4B8BFF] bg-clip-text text-transparent sm:text-[clamp(1.25rem,4.6vw,3.2rem)]">
                 Your social reputation matters
               </h1>
@@ -212,7 +184,7 @@ export function HeroSection() {
         </div>
       </section>
       <section
-        className="bg-white mt-4 pt-10 pb-0 text-ink sm:mt-10 sm:pt-6 sm:pb-0 md:translate-y-0 md:mt-8 md:pt-8 md:pb-1 lg:mt-0 lg:pt-8 lg:pb-1 xl:pt-10 xl:pb-2"
+        className="bg-white mt-2 pt-4 pb-0 text-ink sm:mt-4 sm:pt-4 sm:pb-0 md:translate-y-0 md:mt-4 md:pt-4 md:pb-1 lg:mt-0 lg:pt-2 lg:pb-1 xl:pt-4 xl:pb-2"
         id="elara"
       >
         <div className="mx-auto max-w-6xl px-6">

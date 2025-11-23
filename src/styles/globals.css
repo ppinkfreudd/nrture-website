@@ -117,4 +117,24 @@ a {
   .animate-aurora {
     animation: aurora 70s linear infinite;
   }
+
+  /* Ensure hero fills viewport only on landscape screens */
+  @media (orientation: landscape) {
+    .hero-landscape {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 6rem;
+      padding-bottom: 4rem;
+    }
+  }
+
+  /* Nudge hero content slightly lower on very wide landscape screens */
+  @media (orientation: landscape) and (min-width: 1600px) {
+    .hero-landscape {
+      padding-top: 8rem;
+      padding-bottom: 2rem;
+    }
+  }
 }
