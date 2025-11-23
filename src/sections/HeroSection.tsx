@@ -128,10 +128,12 @@ export function HeroSection() {
   }, []);
 
   const heroHeightStyle =
-    viewportSize !== null && (viewportSize.width < 640 || viewportSize.width >= 1280)
-      ? {
-          minHeight: `${viewportSize.height}px`,
-        }
+    viewportSize !== null
+      ? viewportSize.width >= 1280
+        ? { minHeight: "auto" }
+        : viewportSize.width < 640
+          ? { minHeight: `${viewportSize.height}px` }
+          : undefined
       : undefined;
 
   const loopingGifSrc = `${elaraGif}?cycle=${gifCycle}`;

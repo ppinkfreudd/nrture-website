@@ -381,7 +381,7 @@ export function Navigation() {
                 href="https://elara.nrture.ai/book-a-demo/"
                 className="hidden rounded-full border border-neutral-300 px-3 py-1.5 transition hover:border-neutral-500 hover:text-neutral-700 sm:inline-flex sm:px-4 sm:py-2"
               >
-                Book Demo
+                Request a demo
               </a>
               <a
                 href="https://elara.nrture.ai/"
@@ -511,7 +511,7 @@ export function Navigation() {
                   className="rounded-full border border-neutral-300 px-4 py-2 text-center text-sm font-semibold text-neutral-900 transition hover:border-neutral-500 hover:text-neutral-700"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Book Demo
+                  Request a demo
                 </a>
                 <a
                   href="/login"
