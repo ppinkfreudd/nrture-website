@@ -18,10 +18,10 @@ export function DeviceShowcase({ phoneSrc, tabletSrc, phase, className }: Device
       )}
     >
       <div className="relative flex w-full max-w-[2200px] items-center justify-center overflow-visible">
-        <div className="relative mx-auto w-full max-w-[360px] translate-x-[var(--device-shift)] [--device-shift:25%] sm:max-w-[480px] sm:translate-y-[30%] sm:[--device-shift:32%] md:max-w-[560px] md:translate-y-[32%] md:[--device-shift:24%] md:ml-auto md:mr-0 lg:max-w-[820px] lg:translate-y-[38%] lg:[--device-shift:60%] xl:max-w-[960px] xl:translate-y-[42%] xl:[--device-shift:80%] 2xl:max-w-[1080px] 2xl:translate-y-[45%]">
+        <div className="relative mx-auto w-full max-w-[360px] translate-x-[14%] sm:max-w-[480px] sm:translate-y-[30%] sm:translate-x-[18%] md:max-w-[560px] md:translate-y-[32%] md:translate-x-[20%] md:ml-auto md:mr-0 lg:max-w-[820px] lg:translate-y-[38%] lg:translate-x-[24%] xl:max-w-[960px] xl:translate-y-[42%] xl:translate-x-[26%] 2xl:max-w-[1080px] 2xl:translate-y-[45%] 2xl:translate-x-[28%]">
           <div className="relative aspect-[4/3] w-full overflow-visible">
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-full origin-center scale-[1.45] sm:scale-[1.6] md:scale-[1.8] lg:scale-[2.7] xl:scale-[3.05] 2xl:scale-[3.3]">
+              <div className="w-full origin-center scale-[0.9] sm:scale-[1.05] md:scale-[1.2] lg:scale-[1.65] xl:scale-[1.85] 2xl:scale-[2.05]">
                 <Ipad
                   width={1100}
                   height={760}
@@ -30,8 +30,8 @@ export function DeviceShowcase({ phoneSrc, tabletSrc, phase, className }: Device
                 />
               </div>
             </div>
-            <div className="pointer-events-none absolute bottom-[12%] right-[42%] z-10 md:bottom-[18%] md:right-[28%] lg:bottom-[30%] lg:right-[40%] xl:bottom-[32%] xl:right-[50%]">
-              <div className="relative w-[105px] sm:w-[120px] md:w-[135px] lg:w-[95px] xl:w-[110px]">
+            <div className="pointer-events-none absolute bottom-[10%] right-[30%] z-10 md:bottom-[14%] md:right-[30%] lg:bottom-[18%] lg:right-[28%] xl:bottom-[20%] xl:right-[30%]">
+              <div className="relative w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[190px]">
                 <Iphone15Pro
                   src={phoneSrc}
                   className={clsx(

@@ -21,7 +21,7 @@ export const StickyScroll = ({
   const AUTO_ADVANCE_MS = 6000;
 
   const containerClasses = cn(
-    "relative flex w-full flex-col gap-8 rounded-[32px] bg-transparent px-6 py-10 text-slate-900 sm:gap-10 sm:px-8 sm:py-12 lg:flex-row lg:items-stretch lg:justify-between lg:gap-10 xl:gap-14",
+    "relative flex w-full flex-col gap-8 rounded-[32px] bg-transparent px-3 py-2 text-slate-900 sm:gap-10 sm:px-8 sm:py-3",
     className,
   );
 
@@ -43,20 +43,30 @@ export const StickyScroll = ({
     setActiveCard(index);
   };
 
+  const activeContent = content[safeActiveCard];
+  const hasPreviewContent = Boolean(activeContent?.content);
+
   return (
     <div className={containerClasses}>
+      {hasPreviewContent && (
+        <div
+          className={cn(
+            "w-full max-w-2xl rounded-3xl bg-white p-4 shadow-lg sm:max-w-3xl",
+            contentClassName,
+          )}
+        >
+          {activeContent.content}
+        </div>
+      )}
       <div
         className={cn(
-          "w-full max-w-xl rounded-3xl bg-white p-4 shadow-lg sm:max-w-2xl lg:w-[40%] lg:max-w-lg lg:self-stretch lg:translate-y-4 xl:w-[38%] xl:translate-y-5",
-          contentClassName,
+          "relative w-full text-slate-900",
+          hasPreviewContent ? "mt-6 sm:mt-8" : "mt-0",
         )}
       >
-        {content[safeActiveCard].content ?? null}
-      </div>
-      <div className="relative w-full text-slate-900 lg:ml-8 xl:ml-12 lg:w-[56%] lg:max-w-4xl xl:w-[60%] 2xl:w-[62%]">
         <div
         className={cn(
-          "relative mx-auto flex w-full max-w-[min(480px,100%)] flex-col rounded-[28px] px-4 py-5 shadow-[0_25px_65px_rgba(15,23,42,0.12)] backdrop-blur sm:max-w-full sm:px-6 sm:py-6 lg:translate-x-4 lg:translate-y-10 lg:px-8 lg:py-8 xl:translate-x-8 xl:translate-y-12 xl:px-10 xl:py-9",
+          "relative mx-auto flex w-full max-w-[min(640px,100%)] flex-col rounded-[28px] px-4 py-5 shadow-[0_25px_65px_rgba(15,23,42,0.12)] backdrop-blur sm:max-w-full sm:px-6 sm:py-6 lg:px-8 lg:py-8 xl:px-10 xl:py-9",
           [
             "bg-gradient-to-br from-emerald-100/90 via-white to-white shadow-[0_25px_80px_rgba(16,185,129,0.25)]",
               "bg-gradient-to-br from-rose-100/90 via-white to-white shadow-[0_25px_80px_rgba(244,114,182,0.25)]",
@@ -65,7 +75,7 @@ export const StickyScroll = ({
             ][safeActiveCard % 4],
           )}
         >
-          <div className="min-h-[220px] max-h-[220px] sm:min-h-[210px] sm:max-h-[210px] md:min-h-[225px] md:max-h-[225px] lg:min-h-[240px] lg:max-h-[240px] overflow-hidden">
+          <div className="min-h-[132px] max-h-[132px] sm:min-h-[210px] sm:max-h-[210px] md:min-h-[225px] md:max-h-[225px] lg:min-h-[240px] lg:max-h-[240px] overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={content[safeActiveCard]?.title ?? safeActiveCard}
@@ -79,11 +89,11 @@ export const StickyScroll = ({
                   <div className="text-sm font-medium uppercase tracking-wide text-neutral-500">
                     Feature {safeActiveCard + 1} of {cardLength}
                   </div>
-                  <h2 className="text-2xl font-semibold leading-tight text-slate-900 md:text-3xl">
+                  <h2 className="text-xl font-semibold leading-tight text-slate-900 md:text-3xl">
                     {content[safeActiveCard].title}
                   </h2>
                 </div>
-                <p className="text-base text-slate-600 md:text-lg">
+                <p className="text-sm text-slate-600 md:text-lg">
                   {content[safeActiveCard].description}
                 </p>
               </motion.div>

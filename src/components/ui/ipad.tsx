@@ -6,6 +6,11 @@ export interface IpadProps extends SVGProps<SVGSVGElement> {
   src?: string
 }
 
+const FRAME_X = 18.58
+const FRAME_Y = 15.94
+const FRAME_WIDTH = 482.84
+const FRAME_HEIGHT = 368.91
+
 export function Ipad({ width = 520, height = 400, src, ...props }: IpadProps) {
   const clipPathId = `ipad-screen-${useId().replace(/:/g, "")}`
   const screenX = 31.37
@@ -18,7 +23,7 @@ export function Ipad({ width = 520, height = 400, src, ...props }: IpadProps) {
     <svg
       width={width}
       height={height}
-      viewBox={`0 0 ${width} ${height}`}
+      viewBox={`${FRAME_X} ${FRAME_Y} ${FRAME_WIDTH} ${FRAME_HEIGHT}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
@@ -29,10 +34,10 @@ export function Ipad({ width = 520, height = 400, src, ...props }: IpadProps) {
       />
       <rect
         fill="#000"
-        x="18.58"
-        y="15.94"
-        width="482.84"
-        height="368.91"
+        x={FRAME_X}
+        y={FRAME_Y}
+        width={FRAME_WIDTH}
+        height={FRAME_HEIGHT}
         rx="23.29"
         ry="23.29"
       />
