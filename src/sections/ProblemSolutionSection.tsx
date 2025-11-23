@@ -1,6 +1,9 @@
 export function ProblemSolutionSection() {
   return (
-    <section className="bg-white mt-6 pt-0 pb-10 sm:-mt-1 sm:pt-0 sm:pb-12 md:-mt-1 md:pt-0 md:pb-14">
+    <section
+      id="solutions"
+      className="bg-white mt-6 pt-0 pb-10 scroll-mt-28 sm:-mt-1 sm:pt-0 sm:pb-12 sm:scroll-mt-32 md:-mt-1 md:pt-0 md:pb-14 md:scroll-mt-36 lg:scroll-mt-40"
+    >
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-7 text-center sm:mb-8 md:mb-10">
           <p className="text-[clamp(1.52rem,5.8vw,2.6rem)] font-display font-semibold leading-tight tracking-tight text-ink sm:text-[clamp(1.6rem,4.4vw,2.6rem)] lg:text-[3.2rem]">

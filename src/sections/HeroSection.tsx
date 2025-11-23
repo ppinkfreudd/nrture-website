@@ -184,7 +184,7 @@ export function HeroSection() {
         </div>
       </section>
       <section
-        className="bg-white mt-2 pt-4 pb-0 text-ink sm:mt-4 sm:pt-4 sm:pb-0 md:translate-y-0 md:mt-4 md:pt-4 md:pb-1 lg:mt-0 lg:pt-2 lg:pb-1 xl:pt-4 xl:pb-2"
+        className="bg-white mt-2 pt-4 pb-0 text-ink scroll-mt-28 sm:mt-4 sm:pt-4 sm:pb-0 sm:scroll-mt-32 md:translate-y-0 md:mt-4 md:pt-4 md:pb-1 md:scroll-mt-36 lg:mt-0 lg:pt-2 lg:pb-1 lg:scroll-mt-40 xl:pt-4 xl:pb-2"
         id="elara"
       >
         <div className="mx-auto max-w-6xl px-6">

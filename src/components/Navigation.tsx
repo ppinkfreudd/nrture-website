@@ -28,7 +28,7 @@ type NavItem = {
 const navItems: NavItem[] = [
   {
     label: "Product",
-    href: "#solution",
+    href: "#elara",
     menu: {
       sections: [
         {
@@ -84,7 +84,7 @@ const navItems: NavItem[] = [
   },
   {
     label: "Solutions",
-    href: "#solution",
+    href: "#solutions",
     menu: {
       sections: [
         {
@@ -153,10 +153,6 @@ const navItems: NavItem[] = [
         },
       ],
     },
-  },
-  {
-    label: "Research",
-    href: "#toronto",
   },
   {
     label: "Pricing",
