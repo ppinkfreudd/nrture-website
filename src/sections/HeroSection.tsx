@@ -205,7 +205,7 @@ export function HeroSection() {
           <div className="mt-6 md:mt-6 lg:mt-8">
             <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
               <div className="w-full lg:w-[38%] xl:w-[40%] flex justify-center pl-0 sm:pl-0 lg:pl-14 xl:pl-20">
-                <div className="relative flex h-auto w-full max-w-[min(640px,100%)] items-center justify-center overflow-visible mx-auto px-4 sm:px-6 lg:px-0 lg:h-[480px] xl:h-[520px]">
+                <div className="relative flex h-auto w-full max-w-[min(640px,100%)] items-start justify-center overflow-visible mx-auto px-4 sm:px-6 lg:px-0 lg:h-[480px] lg:translate-y-[20%] xl:h-[520px]">
                   <Ipad
                     width={1182}
                     height={816}
