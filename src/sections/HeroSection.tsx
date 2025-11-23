@@ -118,10 +118,10 @@ export function HeroSection() {
   return (
     <>
       <section
-        className="hero-landscape relative mt-0 box-border flex h-full flex-col justify-center overflow-visible pb-10 pt-24 text-ink sm:pb-4 sm:pt-24 md:pb-6 md:pt-32 md:justify-between md:overflow-visible xl:pb-16 xl:pt-40"
+        className="hero-landscape relative mt-0 box-border overflow-visible pt-24 text-ink sm:pt-24 md:pt-32 xl:pt-40"
         id="solution"
       >
-        <div className="mx-auto flex w-full max-w-[min(1440px,100%)] flex-col gap-8 px-4 pt-4 pb-4 sm:px-6 sm:gap-10 sm:pt-12 sm:pb-6 lg:h-full lg:flex-row lg:items-center lg:gap-8 lg:pb-0 lg:pt-12">
+        <div className="hero-content mx-auto flex w-full max-w-[min(1440px,100%)] flex-col gap-8 px-4 pt-4 pb-4 sm:px-6 sm:gap-10 sm:pt-12 sm:pb-6 lg:flex-row lg:items-center lg:gap-8 lg:pb-0 lg:pt-12">
           <div className="mt-0 flex flex-1 flex-col items-start justify-between gap-10 pb-6 sm:gap-8 sm:justify-center md:gap-8 md:justify-center md:pb-0 md:w-full md:max-w-[1100px] md:pr-12 lg:w-[80%] lg:max-w-none xl:pr-16 h-full">
             <div className="space-y-10 text-center sm:text-left sm:space-y-6 md:space-y-5 w-full max-w-[min(1100px,100%)] pl-2 lg:max-w-none lg:w-auto lg:pl-6 xl:pl-10">
               <h1 className="text-[clamp(1.52rem,5.8vw,2.6rem)] font-display font-semibold leading-[1.1] whitespace-nowrap overflow-visible bg-gradient-to-r from-[#D46BFF] via-[#F9B4F1] to-[#4B8BFF] bg-clip-text text-transparent sm:text-[clamp(1.25rem,4.6vw,3.2rem)]">

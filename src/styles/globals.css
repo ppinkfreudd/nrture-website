@@ -125,16 +125,14 @@ a {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-top: 6rem;
-      padding-bottom: 4rem;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .hero-landscape .hero-content {
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 
-  /* Nudge hero content slightly lower on very wide landscape screens */
-  @media (orientation: landscape) and (min-width: 1600px) {
-    .hero-landscape {
-      padding-top: 8rem;
-      padding-bottom: 2rem;
-    }
-  }
 }
