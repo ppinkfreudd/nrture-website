@@ -6,6 +6,7 @@ import { MeetElaraSection } from "./sections/MeetElaraSection";
 import { PricingSection } from "./sections/PricingSection";
 import { Footer } from "./components/Footer";
 import { TalkToUsPage } from "./pages/TalkToUsPage";
+import { PrivacyPolicyPage } from "./pages/PrivacyPolicyPage";
 
 function App() {
   const [path, setPath] = useState(
@@ -21,6 +22,10 @@ function App() {
 
   if (path.startsWith("/talktous")) {
     return <TalkToUsPage />;
+  }
+
+  if (path.startsWith("/privacy-policy")) {
+    return <PrivacyPolicyPage />;
   }
 
   return (
