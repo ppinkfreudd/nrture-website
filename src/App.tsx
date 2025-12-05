@@ -3,7 +3,10 @@ import { Navigation } from "./components/Navigation";
 import { HeroSection } from "./sections/HeroSection";
 import { ProblemSolutionSection } from "./sections/ProblemSolutionSection";
 import { MeetElaraSection } from "./sections/MeetElaraSection";
+import { SolutionsSection } from "./sections/SolutionsSection";
 import { PricingSection } from "./sections/PricingSection";
+import { FAQSection } from "./sections/FAQSection";
+import { ClosingCTASection } from "./sections/ClosingCTASection";
 import { Footer } from "./components/Footer";
 import { TalkToUsPage } from "./pages/TalkToUsPage";
 
@@ -31,7 +34,10 @@ function App() {
           <HeroSection />
           <ProblemSolutionSection />
           <MeetElaraSection />
+          <SolutionsSection />
           <PricingSection />
+          <FAQSection />
+          <ClosingCTASection />
         </main>
         <Footer />
       </div>

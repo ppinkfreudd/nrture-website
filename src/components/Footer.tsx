@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 export function Footer() {
   return (
     <footer className="border-t-2 border-sky-400 bg-white text-ink" id="contact">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-5 py-10 text-center sm:px-6 lg:px-8">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-5 py-12 text-center sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div className="flex flex-col items-center gap-2 sm:flex-row sm:items-center sm:gap-4 sm:text-left">
             <img src={logo} alt="nrtureAI logo" className="h-8 w-auto sm:h-10" />

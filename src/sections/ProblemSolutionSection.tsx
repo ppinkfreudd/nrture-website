@@ -1,79 +1,159 @@
+import { Iphone15Pro } from "../components/Iphone15Pro";
+
+const featureCards = [
+  {
+    title: "I read every review",
+    description: "I read every review and reply on your behalf, perfectly on tone.",
+    border: "border-[#b4d8ff]",
+    shadow: "shadow-[0_20px_45px_rgba(58,122,248,0.18)]",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 text-sky-600">
+        <path
+          d="M5 4h14a1 1 0 0 1 1 1v9.5a1 1 0 0 1-1 1H9l-4 4v-4H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path d="M8 8h8M8 12h5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "I compare fairly",
+    description: "I compare you with your peers, fairly and clearly.",
+    border: "border-[#f6b7ff]",
+    shadow: "shadow-[0_20px_45px_rgba(221,103,255,0.18)]",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 text-pink-500">
+        <path
+          d="M12 20s-7-4.35-7-9.6C5 7.04 7.239 5 9.8 5c1.48 0 2.823.78 3.6 2.02C14.977 5.78 16.32 5 17.8 5 20.36 5 22.6 7.04 22.6 10.4 22.6 15.65 15.6 20 15.6 20"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "I guide your next move",
+    description: "I guide what lifts visitor experience and reputation.",
+    border: "border-[#c8efff]",
+    shadow: "shadow-[0_20px_45px_rgba(61,212,255,0.2)]",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 text-cyan-500">
+        <path
+          d="M4 12h16M4 12l5 5M4 12l5-5"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+];
+
 export function ProblemSolutionSection() {
   return (
     <section
-      id="solutions"
-      className="bg-white mt-6 pt-0 pb-10 scroll-mt-28 sm:-mt-1 sm:pt-0 sm:pb-12 sm:scroll-mt-32 md:-mt-1 md:pt-0 md:pb-14 md:scroll-mt-36 lg:scroll-mt-40"
+      id="meet-elara"
+      className="bg-white mt-0 pt-0 pb-10 scroll-mt-28 sm:-mt-4 sm:pt-0 sm:pb-12 sm:scroll-mt-32 md:-mt-6 md:pt-2 md:pb-14 md:scroll-mt-36 lg:-mt-8 lg:scroll-mt-40"
     >
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-7 text-center sm:mb-8 md:mb-10">
-          <p className="text-[clamp(1.52rem,5.8vw,2.6rem)] font-display font-semibold leading-tight tracking-tight text-ink sm:text-[clamp(1.6rem,4.4vw,2.6rem)] lg:text-[3.2rem]">
-            Save time. Elevate every visitor moment.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 gap-6 sm:gap-7 md:grid-cols-3 md:gap-6 lg:gap-8 items-stretch">
-          {/* Problem card */}
-          <div className="flex h-full flex-col rounded-3xl border border-rose-100 bg-white px-5 py-6 text-left shadow-[0_18px_45px_rgba(244,63,94,0.12)] sm:px-6 sm:py-7">
-            <h3 className="text-sm font-semibold text-rose-600 sm:text-base">Problem</h3>
-            <p className="mt-1 text-[0.8rem] text-neutral-500 sm:text-[0.85rem]">
-              → The awareness gap
-            </p>
-            <div className="mt-4 space-y-2 text-[0.9rem] leading-relaxed text-neutral-900 sm:text-[0.98rem]">
-              <p className="font-semibold">93% of visitors decide by reading reviews.</p>
-              <p className="font-semibold">80% of businesses do not read their own reviews.</p>
-              <p>This gap quietly erodes trust, spend and repeat visits.</p>
+      <div className="mx-auto w-full max-w-6xl px-0 sm:px-6 lg:max-w-none lg:px-0">
+        <div className="rounded-none bg-gradient-to-r from-[#f4f0ff] via-[#fdf5ff] to-[#e0f3ff] px-4 py-8 shadow-[0_28px_70px_rgba(15,23,42,0.1)] sm:rounded-[32px] sm:px-8 sm:py-10 lg:rounded-[44px] lg:px-20 lg:py-12 xl:px-28 xl:py-14">
+          <div className="flex flex-col items-start gap-8 xl:flex-row xl:items-center xl:gap-24">
+            <div className="w-full space-y-5 text-left xl:w-1/2">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-sky-600 sm:text-sm">Meet Elara</p>
+                <h2 className="mt-2 text-[clamp(2rem,4.5vw,3.25rem)] font-display font-semibold leading-tight text-[#6c43ff]">
+                  Your 24/7 AI Social Reputation Manager
+                </h2>
+              </div>
+              <div className="space-y-4 text-[0.88rem] leading-relaxed text-neutral-700 sm:text-[1.1rem]">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500">Her role</p>
+                  <p className="mt-1 text-[0.95rem] font-medium text-ink sm:text-[1.1rem]">Reputation guardian and visitor joy ambassador.</p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500">Her responsibilities</p>
+                  <p className="mt-1">
+                    She listens to every visitor&apos;s voice and guides you toward what matters, elevating your social
+                    reputation and shaping visitor moments that feel genuinely cared for.
+                  </p>
+                </div>
+                <ul className="space-y-1 text-[0.9rem] font-semibold text-[#1f3e72] sm:text-[1rem]">
+                  <li>• Always on</li>
+                  <li>• Always attentive</li>
+                  <li>• Always by your side</li>
+                </ul>
+              </div>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <a
+                  href="https://elara.nrture.ai/book-a-demo/"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#6ee0ff] via-[#4f9cff] to-[#527bff] px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(49,130,246,0.45)] transition hover:scale-[1.02]"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 text-white">
+                    <path
+                      d="M7 3v3M17 3v3M4 8h16M5 11h14v9H5v-9Z"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  Book a Demo
+                </a>
+              </div>
             </div>
-          </div>
-
-          {/* Solution card */}
-          <div className="flex h-full flex-col rounded-3xl border border-emerald-100 bg-white px-5 py-6 text-left shadow-[0_18px_45px_rgba(16,185,129,0.14)] sm:px-6 sm:py-7">
-            <h3 className="text-sm font-semibold text-emerald-700 sm:text-base">Solution</h3>
-            <p className="mt-1 text-[0.8rem] text-neutral-500 sm:text-[0.85rem]">
-              → Instant intelligence
-            </p>
-            <div className="mt-4 space-y-3 text-[0.9rem] leading-relaxed text-neutral-900 sm:text-[0.98rem]">
-              <p>The nrtureAI Platform brings instant clarity.</p>
-              <p>
-                Elara reads your reviews, autowrites drafts, understands emotions and shows you the peer
-                context that shapes visitor experience and commercial outcomes.
-              </p>
-            </div>
-          </div>
-
-          {/* Key benefits card */}
-          <div className="flex h-full flex-col rounded-3xl border border-sky-100 bg-white px-5 py-6 text-left shadow-[0_18px_45px_rgba(59,130,246,0.12)] sm:px-6 sm:py-7">
-            <h3 className="text-sm font-semibold text-sky-700 sm:text-base">Key benefits</h3>
-            <p className="mt-1 text-[0.8rem] text-neutral-500 sm:text-[0.85rem]">
-              → Confidence to act
-            </p>
-            <p className="mt-3 text-[0.9rem] font-medium text-neutral-900 sm:text-[0.98rem]">
-              With Elara and the nrtureAI Platform you can:
-            </p>
-            <ul className="mt-4 space-y-2 text-[0.9rem] leading-relaxed text-neutral-900 sm:text-[0.98rem]">
-              <li>• reply to every review instantly</li>
-              <li>• understand visitor emotions</li>
-              <li>• see how you compare with peers</li>
-              <li>• uncover spend signals</li>
-              <li>• reduce manual work</li>
-              <li>• act with clarity and confidence</li>
-            </ul>
-          </div>
-        </div>
-        <div className="mt-8 space-y-2">
-          <p className="text-[0.75rem] font-semibold uppercase tracking-[0.22em] text-neutral-600 sm:text-[0.8rem]">
-            Who we support
-          </p>
-          <div className="rounded-[999px] bg-gradient-to-r from-[#D46BFF] via-[#F9B4F1] to-[#4B8BFF] p-[1px] shadow-[0_18px_55px_rgba(15,23,42,0.18)]">
-            <div className="flex w-full flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-[999px] bg-white/90 px-4 py-3 text-[0.8rem] font-medium text-neutral-900 sm:px-6 sm:py-3 sm:text-sm">
-              <span>Cafes</span>
-              <span>Restaurants</span>
-              <span>Attractions</span>
-              <span>Tours</span>
-              <span>Hotels</span>
-              <span>Venues</span>
-              <span>Precincts</span>
-              <span>Cities</span>
-              <span>Councils</span>
-              <span>Airports</span>
+            <div className="flex w-full flex-col gap-6 xl:-mt-6 xl:flex-row xl:items-start xl:justify-center xl:gap-6 xl:w-1/2">
+              <div className="flex w-full justify-center xl:w-auto xl:flex-none xl:justify-center xl:self-stretch">
+                <div className="relative mt-6 flex w-full items-center justify-center sm:mt-8 xl:-mt-6">
+                  <div className="absolute inset-x-4 top-8 h-10 rounded-full bg-gradient-to-r from-[#69d5ff] via-[#7ea8ff] to-[#f5a8ff] opacity-40 blur-3xl" />
+                  <Iphone15Pro
+                    className="relative z-[1] w-full max-w-[320px] drop-shadow-[0_18px_40px_rgba(70,115,246,0.35)] sm:max-w-[340px] xl:max-w-[300px]"
+                    aria-label="Elara, your AI Social Reputation Manager"
+                  />
+                  <div className="pointer-events-none absolute inset-0 z-[2] flex items-center justify-center xl:hidden">
+                    <div className="relative h-full w-full max-w-[300px]">
+                      {[
+                        { position: "top-24 left-1/4", offset: "-translate-x-[60%]", width: "w-[210px]" },
+                        { position: "bottom-20 left-1/4", offset: "-translate-x-[60%]", width: "w-[180px]" },
+                        { position: "bottom-14 right-0", offset: "translate-x-[20%]", width: "w-[180px]" },
+                      ].map((bubble, index) => (
+                        <div
+                          key={featureCards[index].title}
+                          className={`absolute ${bubble.position} ${bubble.width} ${bubble.offset} rounded-[26px] border border-white/70 bg-white/75 p-4 text-[0.9rem] text-slate-600 shadow-[0_18px_40px_rgba(15,23,42,0.18)] backdrop-blur-sm`}
+                        >
+                          <p className="text-[1rem] font-semibold leading-snug text-slate-900">
+                            {featureCards[index].description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="hidden w-full flex-col gap-6 xl:flex xl:w-auto xl:flex-none xl:justify-center xl:self-stretch xl:max-w-[18rem] xl:mx-auto 2xl:max-w-[20rem]">
+                {featureCards.map((card) => (
+                  <div key={card.title} className="relative">
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute left-[-12px] top-1/2 h-5 w-5 -translate-y-1/2 rotate-45 border-l border-t border-slate-200 bg-white z-0"
+                    />
+                    <div className={`relative z-10 rounded-3xl border bg-white px-5 py-4 text-[0.95rem] ${card.border} ${card.shadow}`}>
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/80 shadow-inner">
+                          {card.icon}
+                        </div>
+                        <p className="text-base font-semibold leading-snug text-[#1f3e72]">{card.description}</p>
+                      </div>
+                      <div className="mt-3" />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

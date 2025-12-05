@@ -1,5 +1,7 @@
 import { useId, type SVGProps } from "react";
 
+const defaultIphoneScreen = new URL("../../elara.jpeg", import.meta.url).href;
+
 export interface Iphone15ProProps extends SVGProps<SVGSVGElement> {
   width?: number;
   height?: number;
@@ -10,7 +12,7 @@ export interface Iphone15ProProps extends SVGProps<SVGSVGElement> {
 export function Iphone15Pro({
   width = 433,
   height = 882,
-  src,
+  src = defaultIphoneScreen,
   videoSrc,
   className,
   ...props

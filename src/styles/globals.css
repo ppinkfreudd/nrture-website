@@ -4,6 +4,11 @@
 
 :root {
   color-scheme: light;
+  --color-1: #10BDFF;
+  --color-2: #CE20F9;
+  --color-3: #C21DF9;
+  --color-4: #890DFC;
+  --color-5: #5008FF;
 }
 
 body {
@@ -85,6 +90,9 @@ a {
 
 
 @layer base {
+  html {
+    font-size: 90%;
+  }
   html,
   body,
   #root {
@@ -118,6 +126,47 @@ a {
     animation: aurora 70s linear infinite;
   }
 
+  @keyframes nav-aurora-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 120% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .nav-aurora-halo {
+    background-size: 260% 260%;
+    animation: nav-aurora-shift 12s ease-in-out infinite;
+    will-change: background-position;
+  }
+
+  @keyframes nav-aurora-strobe {
+    0% {
+      background-position: 0% 50%;
+      opacity: 0.35;
+    }
+    25% {
+      background-position: 60% 0%;
+      opacity: 0.55;
+    }
+    50% {
+      background-position: 120% 50%;
+      opacity: 0.4;
+    }
+    75% {
+      background-position: 60% 100%;
+      opacity: 0.6;
+    }
+    100% {
+      background-position: 0% 50%;
+      opacity: 0.35;
+    }
+  }
+
   /* Ensure hero fills viewport only on landscape screens */
   @media (orientation: landscape) {
     .hero-landscape {
@@ -133,6 +182,15 @@ a {
       padding-top: 0;
       padding-bottom: 0;
     }
+  }
+
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
   }
 
 }
