@@ -101,7 +101,7 @@ export function Navigation() {
                 <img src={logo} alt="nrtureAI logo" className="h-8 w-auto sm:h-10 md:h-12" />
               </a>
 
-              <nav className="relative hidden items-center gap-5 text-sm font-semibold text-white xl:flex xl:flex-1 xl:justify-center">
+              <nav className="relative hidden items-center gap-5 text-sm font-semibold text-white xl:flex xl:flex-1 xl:justify-center xl:text-base">
                 {navLinks.map((link) => (
                   <a
                     key={link.label}
