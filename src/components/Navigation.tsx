@@ -134,9 +134,9 @@ export function Navigation() {
                   href="https://elara.nrture.ai/book-a-demo/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hidden rounded-full border border-neutral-300 bg-white px-3 py-1.5 text-neutral-900 transition hover:border-neutral-500 hover:bg-neutral-100 sm:inline-flex sm:px-4 sm:py-2"
+                  className="hidden rounded-full border border-sky-500 bg-white px-3 py-1.5 text-neutral-900 transition hover:border-sky-600 hover:bg-blue-50 sm:inline-flex sm:px-4 sm:py-2"
                 >
-                  Request a demo
+                  Book a demo
                 </a>
                 <a
                   href="https://elara.nrture.ai/"

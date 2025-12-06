@@ -288,7 +288,7 @@ export function SolutionsSection() {
                   aria-disabled="true"
                   className="group flex flex-col items-center gap-2 rounded-3xl border border-white/60 bg-gradient-to-br from-white via-[#eef2ff] to-[#dce4ff] px-4 py-5 text-center text-slate-600 shadow-[0_0_40px_rgba(15,23,42,0.12)] transition hover:-translate-y-0.5"
                 >
-                  <span className={`rounded-2xl p-3 text-white shadow-inner shadow-[0_0_28px_rgba(15,23,42,0.22)] bg-gradient-to-br ${category.accentGradient}`}>
+                  <span className={`rounded-2xl p-3 text-slate-900 shadow-inner shadow-[0_0_28px_rgba(15,23,42,0.22)] bg-gradient-to-br ${category.accentGradient}`}>
                     <Icon className="h-6 w-6" />
                   </span>
                   <p className="text-sm font-semibold text-slate-700">{category.label}</p>

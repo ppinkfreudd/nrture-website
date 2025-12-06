@@ -75,11 +75,11 @@ export function PricingSection() {
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-white">Pricing</p>
         </div>
 
-        <div className="mx-auto max-w-3xl space-y-4 text-center">
-          <h2 className="text-[clamp(2.4rem,4vw,3.4rem)] font-display font-semibold leading-tight">
+        <div className="mx-auto space-y-4 text-center">
+          <h2 className="mx-auto max-w-6xl text-[clamp(2.4rem,4vw,3.4rem)] font-display font-semibold leading-tight">
             For operators of all sizes, nrtureAI is built to match your pace and your ambition.
           </h2>
-          <p className="text-lg text-white/85">
+          <p className="mx-auto max-w-3xl text-lg text-white/85">
             Whether you run one outlet or an entire destination, our pricing scales clearly with your footprint and the visitor
             experiences you want to elevate.
           </p>

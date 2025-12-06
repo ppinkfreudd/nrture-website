@@ -71,7 +71,7 @@ export function ProblemSolutionSection() {
                   Your 24/7 AI Social Reputation Manager
                 </h2>
               </div>
-              <div className="space-y-4 text-[0.88rem] leading-relaxed text-neutral-700 sm:text-[1.1rem]">
+              <div className="space-y-8 text-[0.88rem] leading-relaxed text-neutral-700 sm:space-y-10 sm:text-[1.1rem]">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500">Her role</p>
                   <p className="mt-1 text-[0.95rem] font-medium text-ink sm:text-[1.1rem]">Reputation guardian and visitor joy ambassador.</p>
