@@ -72,13 +72,18 @@ export function Navigation() {
     <header className="fixed inset-x-0 top-3 z-50 bg-transparent sm:top-4">
       <div className="relative mx-auto w-full max-w-7xl px-3 py-3 sm:px-4">
         <div
-          className={`pointer-events-none absolute inset-x-0 -top-10 flex justify-center -z-10 sm:-top-12 transition-all duration-500 ${
+          className={`pointer-events-none absolute left-1/2 -top-10 flex w-[260vw] -translate-x-1/2 items-start justify-center -z-10 sm:-top-12 sm:w-[200vw] transition-all duration-500 ${
             isAtTop ? "opacity-80 translate-y-0" : "opacity-0 -translate-y-6"
           }`}
         >
           <div
-            className="nav-aurora-halo h-[320px] w-[min(1200px,95vw)] rounded-full bg-gradient-to-r from-[#5ec6ff] via-[#c880ff] to-[#5c5bff] blur-[120px] sm:h-[340px] sm:blur-[140px]"
-            style={{ transform: "translateY(10px)", opacity: 0.65 }}
+            className="nav-aurora-halo h-[400px] w-[240vw] max-w-none rounded-none bg-gradient-to-r from-[#5ec6ff] via-[#c880ff] to-[#5c5bff] blur-[120px] sm:h-[420px] sm:blur-[140px]"
+            style={{
+              transform: "translateY(10px)",
+              opacity: 0.65,
+              maskImage: "linear-gradient(180deg, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 95%)",
+              WebkitMaskImage: "linear-gradient(180deg, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 95%)",
+            }}
           />
         </div>
         <div className="relative z-10">
